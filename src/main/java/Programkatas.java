@@ -67,7 +67,7 @@ public class Programkatas {
                 System.out.println(each);
             }
         }
-        public static void combine(int a[], int b[]) {
+        public static void combine(int[] a, int[] b) {
             int aLen = a.length;
             int bLen = b.length;
             int[] result = new int[aLen + bLen];
@@ -86,7 +86,6 @@ public class Programkatas {
         }
 
         public static void frame(String... fra){
-
             System.out.println("*********");
             for(String i:fra){
                     if (i.length() == 5) {
@@ -118,9 +117,7 @@ public class Programkatas {
         isosceles(4);
         longest("the", "quick", "brown", "chickens", "fox", "ate", "my");
         longest("once", "upon", "a", "time", "hi");
-            int a[] = {11,22,33};
-            int b[] = {1,2,3};
-        combine(a,b);
+        combine(new int[]{11, 22, 33}, new int[]{1,2,3});
         frame("Write", "good", "code", "every", "day");
         }
 }
