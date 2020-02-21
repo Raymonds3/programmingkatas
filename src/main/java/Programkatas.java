@@ -86,25 +86,45 @@ public class Programkatas {
         }
 
         public static void frame(String... fra){
-            System.out.println("*********");
-            for(String i:fra){
-                    if (i.length() == 5) {
-                        System.out.print("* " + i);
-                        System.out.print(" ");
-                        System.out.print("*\n");
-                    } else if (i.length() == 4) {
-                        System.out.print("* " + i);
-                        System.out.print("  ");
-                        System.out.print("*\n");
-                    } else if (i.length() == 3) {
-                        System.out.print("* " + i);
-                        System.out.print("   ");
-                        System.out.print("*\n");
-                    }else{
-                        continue;
-                    }
+            ArrayList<String> list = new ArrayList<String>();
+            int inside = 0;
+            int topsize = 0;
+            int longestlength = 0;
+            for (String i : fra) {
+                int length = i.length();
+                if (length > longestlength) {
+                    longestlength = length;
+                    list.clear();
+                }
+                if (length == longestlength) {
+                    list.add(i);
+                }
+
             }
-            System.out.println("*********");
+//          top stars
+            for (String x : list){
+                topsize = x.length();
+            }
+            for(int j=0; j<topsize+4;j++) {
+                System.out.print("*");
+
+            }
+            System.out.println();
+//          middle of the frame
+            for (String i : fra) {
+                System.out.print("* " + i);
+                inside = topsize+4-i.length()-3;
+                for (int z=0;z<inside;z++){
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+                System.out.println();
+            }
+//          bottom stars
+            for(int j=0; j<topsize+4;j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
 
 
@@ -118,7 +138,7 @@ public class Programkatas {
         longest("the", "quick", "brown", "chickens", "fox", "ate", "my");
         longest("once", "upon", "a", "time", "hi");
         combine(new int[]{11, 22, 33}, new int[]{1,2,3});
-        frame("Write", "good", "code", "every", "day");
+        frame("Write", "good", "code", "every", "dayuuuuuuuuuu");
         }
 }
 
